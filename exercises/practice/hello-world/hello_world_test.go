@@ -1,6 +1,13 @@
 package greeting
 
-import "testing"
+/**
+* go test hello_world_test.go   can execute all methods that start with Test,
+  go test can run with out main package.
+*/
+import (
+	"fmt"
+	"testing"
+)
 
 // Define a function named HelloWorld that takes no arguments,
 // and returns a string.
@@ -8,10 +15,15 @@ import "testing"
 // HelloWorld() string
 
 func TestHelloWorld(t *testing.T) {
+	fmt.Println("this is func test")
 	expected := "Hello, World!"
 	if observed := HelloWorld(); observed != expected {
 		t.Fatalf("HelloWorld() = %v, want %v", observed, expected)
 	}
+}
+
+func TestHelloWorld2(t *testing.T) {
+	fmt.Println("i am here")
 }
 
 // BenchmarkHelloWorld() is a benchmarking function. These functions follow the
@@ -31,6 +43,7 @@ func TestHelloWorld(t *testing.T) {
 // machines, with different specs, so the results from these benchmark tests may
 // vary.
 func BenchmarkHelloWorld(b *testing.B) {
+	fmt.Println("this is benchmark")
 	if testing.Short() {
 		b.Skip("skipping benchmark in short mode.")
 	}
