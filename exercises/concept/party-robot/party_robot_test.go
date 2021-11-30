@@ -1,6 +1,7 @@
 package partyrobot
 
 import (
+	"fmt"
 	"testing"
 )
 
@@ -104,4 +105,10 @@ func TestAssignTable(t *testing.T) {
 			}
 		})
 	}
+}
+
+//自定义测试用例执行时，如果想查看输出需要使用go test -run {方法名} -v
+func TestSprintOut(t *testing.T) {
+	ret := fmt.Sprintf("here : %010d", 23)
+	fmt.Println(ret)
 }
