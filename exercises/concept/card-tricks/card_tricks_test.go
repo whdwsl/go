@@ -1,6 +1,7 @@
 package cards
 
 import (
+	"fmt"
 	"testing"
 )
 
@@ -276,4 +277,12 @@ func copySlice(s []int) []int {
 	var slice = make([]int, len(s))
 	copy(slice, s)
 	return slice
+}
+
+func TestSliseInit(t *testing.T) {
+	ret := make([]int, 3)
+	for b := 0; b < 3; b++ {
+		ret[b] = 2
+	}
+	fmt.Println("a:", ret)
 }
